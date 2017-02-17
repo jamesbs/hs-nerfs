@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "yarn ddev",
+    "start": "yarn build:dev",
     "poststart": "yarn serve",
     "build:dev": "webpack",
     "ddev": "concurrently 'yarn webpack-dev-server' 'yarn serve'",
@@ -22,6 +22,8 @@
     "angular-ui-router": "next",
     "concurrently": "^3.3.0",
     "css-loader": "^0.26.1",
+    "express": "^4.14.1",
+    "express-history-api-fallback": "^2.1.0",
     "extract-loader": "^0.1.0",
     "file-loader": "^0.9.0",
     "hapi": "^16.1.0",
@@ -37,7 +39,7 @@
     "style-loader": "^0.13.1",
     "ts-loader": "latest",
     "ts-node": "^2.1.0",
-    "typescript": "latest",
+    "typescript": "next",
     "url-loader": "^0.5.7",
     "webpack": "beta",
     "webpack-dev-server": "beta",
