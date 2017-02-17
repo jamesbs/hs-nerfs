@@ -1,6 +1,30 @@
 <h1>Hearthstone History of Nerfs</h1>
+
+<h2>Promise after resolve</h2>
 <ul>
   <li ng-repeat="nerf in $ctrl.nerfs">
     <a href="/nerf-detail/{{nerf}}">{{nerf}}</a>
+  </li>
+</ul>
+
+<h2>1s delay</h2>
+<ul>
+  <li ng-repeat="nerf in $ctrl.nerfs">
+    <a href="/1s-nerf-detail/{{nerf}}">{{nerf}}</a>
+  </li>
+</ul>
+
+
+<h2>5s delay</h2>
+<ul>
+  <li ng-repeat="nerf in $ctrl.nerfs">
+    <a href="/5s-nerf-detail/{{nerf}}">{{nerf}}</a>
+  </li>
+</ul>
+
+<h2>On resolve</h2>
+<ul>
+  <li ng-repeat="nerf in $ctrl.nerfs">
+    <a href="/resolve-nerf-detail/{{nerf}}">{{nerf}}</a>
   </li>
 </ul>

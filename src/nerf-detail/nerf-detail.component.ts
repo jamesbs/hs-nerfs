@@ -6,12 +6,18 @@ export const NerfDetailComponent = {
   bindings: {
     id: '<',
     detail: '<',
+    delay: '<'
   },
 
-  controller: ($routeParams, ngMeta, NerfDetailService: NerfDetailService) => {
+  controller: function(ngMeta, NerfDetailService: NerfDetailService) {
+    console.log('delay is', this.delay)
+    const delay = (this.delay || 0) * 1000
 
-    NerfDetailService.getNerfDetail($routeParams.id)
-      .then(nerfDetail => {
+    NerfDetailService.getNerfDetail(this.id)
+      .then(nerfDetail => new Promise(resolve => {
+        setTimeout(() => resolve(nerfDetail), delay)
+      }))
+      .then((nerfDetail: any) => {
         ngMeta.setTitle(nerfDetail.title)
         ngMeta.setTag('description', nerfDetail.description)
       })

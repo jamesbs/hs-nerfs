@@ -1,4 +1,4 @@
-<h1>Nerf Detail on {{$ctrl.id}}</h1>
+<h1><span ng-if="$ctrl.delay">After {{$ctrl.delay}}s </span>Nerf Detail on {{$ctrl.id}}</h1>
 <h3><a href="{{$ctrl.detail.url}}">Official Announcement</a></h3>
 <ul>
   <li ng-repeat="change in $ctrl.detail.changes">
