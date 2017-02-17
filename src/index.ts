@@ -1,6 +1,7 @@
 import { module, bootstrap } from 'angular'
 import * as ngRoute from 'angular-route'
 import 'ng-meta'
+import './googlee03f76ed3404260f.html'
 import routes from './routes'
 import { AppComponent } from './app.component'
 

@@ -17,7 +17,12 @@ export const devConfig = merge(baseConfig, {
       {
         test: /\.html$/,
         loaders: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            query: {
+              name: '[name].[ext]'
+            },
+          },
           'extract-loader',
           'html-loader',
         ],
