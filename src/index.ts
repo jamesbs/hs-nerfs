@@ -13,7 +13,8 @@ export const app = module('app', [
     ...routes
   ])
   .component('appRoot', AppComponent)
-  .config($routeProvider => {
+  .config(($routeProvider, $locationProvider) => {
+    $locationProvider.html5Mode(true)
     $routeProvider.otherwise({ redirectTo: '/' })
   })
   .run(ngMeta => {

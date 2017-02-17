@@ -44,6 +44,7 @@ export const devConfig = merge(baseConfig, {
         target: 'http://localhost:8998',
         secure: false
       }
-    }
+    },
+    historyApiFallback: true
   }
 })
