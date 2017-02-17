@@ -1,0 +1,7 @@
+<h1>Nerf Detail on {{$ctrl.id}}</h1>
+<h3><a href="{{$ctrl.detail.url}}">Official Announcement</a></h3>
+<ul>
+  <li ng-repeat="change in $ctrl.detail.changes">
+    {{change}}
+  </li>
+</ul>
