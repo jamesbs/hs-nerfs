@@ -3,7 +3,7 @@
     "start": "yarn ddev",
     "poststart": "yarn serve",
     "build:dev": "webpack",
-    "ddev": "concurrently 'yarn webpack-dev-server' 'yarn build:dev'",
+    "ddev": "concurrently 'yarn webpack-dev-server' 'yarn serve'",
     "preprod": "yarn clean-dist",
     "prod": "yarn build",
     "postprod": "yarn serve",
