@@ -17,3 +17,7 @@ server.get('/api/update/:id', (req, res) => {
 
 server.use(express.static(root))
 server.use(fallback('index.html', { root }))
+
+server.listen(port, () => {
+  console.log('running server on port', port)
+})
