@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import { baseConfig } from './base'
 import * as paths from './paths'
 console.log('port is', process.env.PORT || 8080, typeof process.env.PORT)
+const port = process.env.PORT || 8080
 export const devConfig = merge(baseConfig, {
   output: {
     pathinfo: true,
@@ -39,7 +40,7 @@ export const devConfig = merge(baseConfig, {
     ]
   },
   devServer: {
-    port: ,
+    port: port,
     proxy: {
       '/api': {
         target: 'http://localhost:8998',
