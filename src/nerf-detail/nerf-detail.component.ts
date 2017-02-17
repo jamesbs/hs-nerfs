@@ -6,7 +6,8 @@ export const NerfDetailComponent = {
   bindings: {
     id: '<',
     detail: '<',
-    delay: '<'
+    delay: '<',
+    meta: '<',
   },
 
   controller: function(ngMeta, NerfDetailService: NerfDetailService) {
@@ -17,8 +18,18 @@ export const NerfDetailComponent = {
         setTimeout(() => resolve(nerfDetail), delay)
       }))
       .then((nerfDetail: any) => {
-        ngMeta.setTitle(nerfDetail.title)
-        ngMeta.setTag('description', nerfDetail.description)
+        const title = delay
+          ? `show after ${delay}ms ${nerfDetail.title}`
+          : nerfDetail.title
+
+        const description = delay
+          ? `show after ${delay}ms ${nerfDetail.description}`
+          : nerfDetail.description
+
+        if(!this.meta) {
+          ngMeta.setTitle(title)
+          ngMeta.setTag('description', description)
+        }
       })
   }
 }

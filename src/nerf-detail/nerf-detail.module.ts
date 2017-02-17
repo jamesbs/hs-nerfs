@@ -33,15 +33,15 @@ export const NerfDetailModule = module('app.nerfDetail', [])
         }
       })
       .when('/resolve-nerf-detail/:id', {
-        template: '<nerf-detail id="$resolve.id" detail="$resolve.detail"></nerf-detail>',
+        template: '<nerf-detail id="$resolve.id" detail="$resolve.detail" meta="true"></nerf-detail>',
         resolve: {
           id: ($route) => $route.current.params.id,
           detail: ($route, NerfDetailService: NerfDetailService) => NerfDetailService.getNerfDetail($route.current.params.id),
           data: ($route, ngMeta, NerfDetailService: NerfDetailService) => {
             return NerfDetailService.getNerfDetail($route.current.params.id)
               .then(({ title, description }) => {
-                ngMeta.setTitle(title)
-                ngMeta.setTag('description', description)
+                ngMeta.setTitle(`done in resolve ${title}`)
+                ngMeta.setTag('description', `done in resolve ${description}`)
               })
           }
         },
