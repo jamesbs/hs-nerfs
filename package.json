@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "prestart": "yarn clean-dist",
-    "start": "yarn build:dev",
+    "start": "yarn ddev",
     "poststart": "yarn serve",
     "build:dev": "webpack",
     "predev": "yarn build:dev",
