@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "postinstall": "yarn start",
     "start": "yarn build:dev",
     "poststart": "yarn serve",
     "prebuild:dev": "yarn clean-dist",
