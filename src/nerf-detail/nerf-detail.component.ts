@@ -10,7 +10,6 @@ export const NerfDetailComponent = {
   },
 
   controller: function(ngMeta, NerfDetailService: NerfDetailService) {
-    console.log('delay is', this.delay)
     const delay = (this.delay || 0) * 1000
 
     NerfDetailService.getNerfDetail(this.id)

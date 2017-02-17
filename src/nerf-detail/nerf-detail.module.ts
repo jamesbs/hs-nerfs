@@ -38,10 +38,8 @@ export const NerfDetailModule = module('app.nerfDetail', [])
           id: ($route) => $route.current.params.id,
           detail: ($route, NerfDetailService: NerfDetailService) => NerfDetailService.getNerfDetail($route.current.params.id),
           data: ($route, ngMeta, NerfDetailService: NerfDetailService) => {
-            console.log('route', $route, 'meta', ngMeta, 'nds', NerfDetailService)
             return NerfDetailService.getNerfDetail($route.current.params.id)
               .then(({ title, description }) => {
-                // console.log('title', title, 'description', description)
                 ngMeta.setTitle(title)
                 ngMeta.setTag('description', description)
               })
