@@ -4,6 +4,8 @@ import { resolve } from 'path'
 
 const server = new Hapi.Server()
 
+console.log('running server on port ', process.env.PORT || 8998)
+
 server.connection({
   port: process.env.PORT || 8998
 })
