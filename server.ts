@@ -5,7 +5,7 @@ import { resolve } from 'path'
 const server = new Hapi.Server()
 
 server.connection({
-  port: 8998
+  port: process.env.PORT || 8998
 })
 
 server.register(require('inert'), function(err) {
